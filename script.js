@@ -1,8 +1,10 @@
 let form = document.getElementById("form")
 
 
+if(form){
+	form.addEventListener('submit', ejecutaEstaFuncion)
+}
 
-form.addEventListener('submit', ejecutaEstaFuncion)
 
 function ejecutaEstaFuncion(event){
     event.preventDefault();
