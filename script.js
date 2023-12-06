@@ -109,3 +109,5 @@ function ejecutaEstaFuncion(event){
 	            document.getElementById('img').src = fPregunta[preguntaActual];
 	            document.preguntas.respuesta.value = '';
 	        }
+		    
+	    }
