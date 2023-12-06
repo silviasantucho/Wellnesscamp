@@ -1,0 +1,120 @@
+body {
+	background-image: url("img/arriba.jpg");
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	text-align: center;
+		}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: rgb(132, 199, 149);
+	opacity: 1; /* Firefox */
+		  }
+		  
+	ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	}
+	li {
+	display: inline-block;
+	line-height: 30px;	
+	}
+	
+	h1, h2, h3{
+	color:  #00FF00;
+	background-color:#1d511c;
+	padding: 5px 10px;
+	text-align: center;
+	}
+	
+	a:hover {
+	color: #FFF;
+	}		
+	a:link{
+        		color: #ff0000;
+        	}	
+	a:visited{
+        		color: #6600FF;
+        	}
+	a:active{
+        		color: #ffa500;
+        	}
+	::selection{
+				color: slateblue;
+				background: #ffa500;
+        	}				
+		header {
+			color: #02410b;
+			text-align: center;
+		}
+		main{  
+                display: block;
+               
+            }
+		section {
+			color: #000000;
+			background:#45dc1433;
+			padding: 1em;			
+		}
+		article {
+			color: #033011;
+			background:#45dc1433;	
+    		padding: 1em;
+	
+		}
+			
+#contenedor {
+			color:#ff0000;
+			background:#efe9f752;
+			margin: 0 auto;
+		}	
+.columnas {
+			color:#00FF00;
+			background:#6600FF;
+			text-align: left;
+			display: flex;
+			padding:8px;
+			border: 0;
+		}
+		
+/* Juego 1  */
+#botonjuego{
+	font-size: 40px;
+    text-align: center;	
+}
+#botonIniciar{
+	font-size: 25px;
+	color:#00FF00;
+    background-color:#1f370e;
+	padding: 1em;
+}
+#juego{
+	color:#00FF00;
+    text-align: center;
+    }
+#pregunta{ 
+	font-size: 20px;
+	background: #4f684b85;
+    color:#3ed33e;
+ }
+#preguntas{ 
+	display:none;
+	font-size:20px;
+	background: #206b1385;
+    color:#00FF00;
+	padding:8px;
+	border: 0;
+ }
+#respuesta{ 
+	font-size:20px;
+	color:#DC143C;
+ }
+.colorform {
+margin-top: 2%;
+background-color: #5ccc4885;
+color:#021a02;
+}
+
+#imagenJuego{
+	display:none;
+}
+/* Fin Juego 1  */

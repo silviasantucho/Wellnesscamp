@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Camp</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="juego.css">
+
+		<script>
+	    //Array preguntas
+	    var Ps = [
+	        '1. ¿Cúal es el nombre de los 7 principales centros energéticos?' + '<br><br>' + 'a. Pranayamas' + '<br>' + 'b. Chakras' + '<br>' + 'c. Ayurveda' + '<br>' + 'd. Mudras' + '<br>',
+	        '2. El estado de iluminación se denomina...' + '<br><br>' + 'a. Nirvana' + '<br>' + 'b. Samsara' + '<br>' + 'c. Om' + '<br>' + 'd. Corazón' + '<br>',
+	        '3. ¿El yoga es una disciplina?' + '<br><br>' + 'a. Moderna' + '<br>' + 'b. Clásica' + '<br>' + 'c. Milenaria' + '<br>' + 'd. Contemporánea' + '<br>',
+	        '4. El nombre de Ayurveda corresponde a una...' + '<br><br>' + 'a. Montaña' + '<br>' + 'b. Filosofía' + '<br>' + 'c. Maestro' + '<br>' + 'd. Medicina' + '<br>',
+	        '5. ¿Cómo se llaman a los ejercicios de respiración en yoga?' + '<br><br>' + 'a. Pranayamas' + '<br>' + 'b. Khatakali' + '<br>' + 'c. Asanas' + '<br>' + 'd. Loto' + '<br>',
+	        '6. Se relaja la mente a través de ...' + '<br><br>' + 'a. Meditación' + '<br>' + 'b. Esfuerzo' + '<br>' + 'c. Disciplina' + '<br>' + 'd. Lenguaje' + '<br>',
+	        '7. ¿Cómo se llame el quinto chakra?' + '<br><br>' + 'a. Vishuda o garganta' + '<br>' + 'b. Anahata ó corazón' + '<br>' + 'c. Ajnia o tercer ojo' + '<br>' + 'd. Manipuri o raíz' + '<br>',	
+	        '8. ¿Se denomina mantras a?' + '<br><br>' + 'a. Sonidos' + '<br>' + 'b. Alimentos' + '<br>' + 'c. Palabras sanscritas' + '<br>' + 'd. Ninguna es correcta' + '<br>',
+	        '9. ¿El término asanas corresponde a?' + '<br><br>' + 'a. Ciudad' + '<br>' + 'b. Posturas' + '<br>' + 'c. Disciplina oriental' + '<br>' + 'd. Maestro' + '<br>',
+	        '10. En qué país tiene origen el yoga?' + '<br><br>' + 'a. Argentina' + '<br>' + 'b. Francia' + '<br>' + 'c. India' + '<br>' + 'd. Indonesia' + '<br>',
+	            ];	
+	    //Array respuestas correctas  
+	    var Rs = ["b", "a", "c", "d", "a", "a", "a", "a", "b", "c"];
+
+	    //Array foto numero pregunta
+	    var fPregunta = ["img/juego/p1.png", 'img/juego/p2.png', 'img/juego/p3.png', 'img/juego/p4.png', 'img/juego/p5.png', 'img/juego/p6.png', 'img/juego/p7.png', 'img/juego/p8.png', 'img/juego/p9.png', 'img/juego/p10.png',];
+
+	    //General
+	    var respuestasCorrectas;
+	    var preguntaActual;
+	    var puntajeFinal;
+	    var usuarioR;
+
+	
+	    function iniciar()
+	    {
+	        respuestasCorrectas = 0;
+	        preguntaActual = 0;
+	        puntajeFinal = 0;
+	        document.getElementById('pregunta').innerHTML = Ps[preguntaActual];
+	        document.getElementById('juego').style.display = 'block';
+	        document.getElementById('botonIniciar').style.display = 'none';
+			document.getElementById("preguntas").style.display = 'block';
+			document.getElementById("imagenJuego").style.display = 'initial';
+	    }
+
+	    //Chequea si el tipo de dato Y respuesta es correcta. Calcula puntos  y cambia la pregunta
+	    function responder()
+	    {
+	        usuarioR = document.preguntas.respuesta.value;
+			document.getElementById("inputRespuesta").value = "";
+	        if (usuarioR != 'a' && usuarioR != 'b' && usuarioR != 'c' && usuarioR != 'd')
+	        {
+	            alert('Error. Ingrese la opción correcta');
+	        } else {
+	            if(usuarioR == Rs[preguntaActual])
+	            {
+	                alert('Respuesta Correcta!');
+	                respuestasCorrectas++;
+	            } else {
+	                alert('Respuesta Incorrecta!');
+	            }
+	            calcular();
+	            cambioPregunta();
+	        }
+	    }
+
+	    //Calcula puntos y multiplica
+	    function calcular()
+	    {
+	        if(usuarioR == Rs[preguntaActual])
+	        {
+	            puntosRespuesta = (preguntaActual+1) * respuestasCorrectas;
+	            puntajeFinal += puntosRespuesta;
+	        } else {
+	            puntosRespuesta = 0;
+	            respuestasCorrectas = 0;
+	        }
+	    }
+
+	    //Cambia la pregunta e imágenes, muestra el final puntuación total
+	    function cambioPregunta()
+	    {
+	        preguntaActual++;
+	        if(preguntaActual>=Ps.length)
+	        {
+	            // document.getElementById('juego').innerHTML = 'Finalizó el Juego' + '<br>' + 'Lograste ' + puntajeFinal + ' puntos' + '<br><br>';
+				alert("Muy bien! Ganaste el juego con: " + puntajeFinal + " puntos");
+				document.getElementById("preguntas").style.display = 'none';
+	        document.getElementById('botonIniciar').style.display = 'initial';
+				document.getElementById("imagenJuego").style.display = 'none';
+	        } else {
+	            document.getElementById('pregunta').innerHTML = Ps[preguntaActual];
+	            document.getElementById('img').src = fPregunta[preguntaActual];
+	            document.preguntas.respuesta.value = '';
+	        }
+		</script>
+</head>
+
+<body>
+<header class="encabezado">   
+    <div class=" container  hv-100 align-items-center">
+    <div class=" col-8 text-warning link">
+		  <nav class="navbar justify-content navbar-expand-lg navbar-light ">
+			<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			  <ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+				</li>
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="yoga.html">Yoga</a>
+				  </li> 
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="coaching.html">Coaching</a>
+				  </li>
+			  <li class="nav-item">
+				<a class="nav-link" aria-current="page" href="#">Juego</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" aria-current="page" href="testimonios.html">Testimonios</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" aria-current="page" href="alumna.html">Alumna</a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="contacto.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				  Contacto
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				  <li><a class="dropdown-item" href="formulario.html">Formulario</a>
+				  </li>
+              </a>
+        </ul>
+      </div>
+    </nav>
+			<h1><span class="titulo">Wellnes Camp</h1>
+			<h2> <span class="titulo">Creando Hábitos Saludables </h2>
+			<p class="otro text-white"> Ofrecemos actividades y eventos Holísticos para el Bienestar Integral del Ser, FÍsico Mental y Emocional.
+			</p>
+		</div>
+	</div>
+	
+	<div class="col-18 col-md-10 mx-auto col-datos"></div>
+		<div><img src="img/juego/j2.png" alt="yoga" height="236"></div>
+		</div>
+			
+</header>
+<section class="datos py-4">
+	<div class="col-18 col-md-10 mx-auto col-datos">
+	<h3>Objetivos del juego</h3>
+	<p>El juego consta de 10 preguntas. <br>
+1) Las preguntas pueden ser para responder con una palabra, para elegir verdadero o falso, <br> o para elegir entre varias opciones predeterminadas.<br>
+2) A medida que avanzan las preguntas se van poniendo más difíciles. <br>
+3) Cada pregunta va incrementando su puntaje en caso de responder correctamente. <br> La pregunta 1 vale 1 punto. La pregunta 2 vale 2 puntos. Y así sucesivamente. <br>
+4) También se tiene en cuenta la racha de respuestas correctas para multiplicar el puntaje. <br> El puntaje de la pregunta se multiplica por el número de respuestas correctas en la racha. </p>
+   
+
+	    	<div id="botonIniciarJuego">
+	        <button id="botonIniciar" onclick="iniciar();">Iniciar</button>
+	    	</div> <br>
+			<img id="imagenJuego" src="img/juego/p1.png" alt="Imagen relacionada con la pregunta" id="img">
+</section>
+	        <div id="juego"> </div>
+	            <form name="preguntas" id="preguntas">
+	                <label for="respuesta" id="pregunta"></label>
+	                <br>
+	                <input id="inputRespuesta" class="colorform" type="text" name="respuesta" placeholder="Ingrese la opción correcta">
+	                <br>
+	                <input class="colorform" type="button" name="botonResponder" value="Responder" onclick="responder(
+	                );">
+	                <br><br> 
+	            </form>       
+</main><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<footer class="pie-pagina pie">
+  <div class="grupo-1">
+	  <div class="box">
+		  <div class="footer-content-container">
+			<h3 class="website-logo text-white">Silvia Santucho</h3>
+			<span class="footer-info">(+54) 11 35098420</span>
+			<span class="footer-info">sssantucho1971@gmail.com</span>
+		</div>
+	  </div>
+	  <div class="social-links">
+	  <button type="button" class="btn btn-outline-secondary">
+	  <a href="https://www.instagram.com/pranadanza/" target="_blank"><i class="bi bi-instagram" ></i></a></button>
+	  <button type="button" class="btn btn-outline-secondary">
+	  <a href="https://www.facebook.com/wellness.camp"target="_blank"><i class="bi bi-facebook"></i></a></button>
+	  <button type="button" class="btn btn-outline-secondary">
+	  <a href="https://www.linkedin.com/in/silvia-santucho-532a8520b/"target="_blank"><i class="bi bi-linkedin"></i></a></button>
+	  <button type="button" class="btn btn-outline-secondary">
+	  <a href="https://api.whatsapp.com/send?phone=+5491135098420&text=Hola, Puedes darme mas información!"target="_blank"><i class="bi bi-whatsapp"></i></a></button>
+
+ </div>             
+  </div>
+  <div class="grupo-2">
+	<small>© 2023 <b>Silvia Santucho</b> - Todos los Derechos Reservados.</small>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,337 @@
+
+/* encabezado*/
+.encabezado{
+    background-image: url(../img/arriba.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#olas{
+    margin-top: 05%;
+}
+@media (max-width: 720px) {
+    .encabezado{
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #olas{
+        margin-top:0%;
+        /* display:none; */
+    }
+}
+
+.hv-50{
+    height: 50vmin;
+}
+
+/* menu fondo parrafo*/
+.otro { 
+    background-position: left;
+    background-size: cover;
+}
+/* menu*/
+nav.navbar{
+    font-family: 'Fredoka One', cursive;
+}
+.nav-item:hover{
+  font-size: 18px;
+    background-color: #61a47f;
+    border-radius: 5px;
+  }
+.container-fluid{
+     width: 100%;
+    background-color: #e8ebe0;
+     grid-area: auto;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#video{
+    display: flex;
+    justify-content: center;
+}
+/* Imagenes figura cuadrado-circulo */
+.card-img-filter{
+    filter:opacity(0.7);
+   height: 300px;
+    border-radius: 30px;
+    padding: 10px;
+}
+.card {
+    transition-duration: 6s;
+    clip-path: circle(
+        50% 0,        
+        100% 0
+        100% 50%,
+        50% 100%,
+        50% 100%,
+        0 100%,
+        0 50%,
+        0 0
+        );
+}
+.card-effect:hover .card {
+    clip-path: circle(30%);
+        50% 0,
+        50% 0,
+        100% 50%,
+        100% 50%,
+        50% 100%,
+        50% 100%,
+        0 50%,
+        0 50%
+    );
+}
+.titulo {
+    color:#381504;
+}
+.card-effect:hover .card-img-overlay{
+    transform: scale(0.7);
+}
+.card-img-overlay{
+    transition-duration: 0.6s;
+}
+/* estilos galeria diseño */
+.ola {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+.galeria {
+	display: flex;
+	width: 88%;
+	margin: auto;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	z-index: 1;
+}
+
+.galeria.foto {
+	width: 400px;
+	height: 400px;
+	position: relative;
+	margin-bottom: 35px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+	transition: 0.6s ease;
+}
+.galeria.foto:hover {
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.foto img {
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to top, #b4ce4196 0%, #f5de11a1 100%);
+	width: 100%;
+	height: 0;
+	transition: 0.55s ease;
+	overflow: hidden;
+}
+.overlay h2 {
+	color: rgb(104, 179, 81);
+	font-size: 25px;
+	font-family: 'Josefin Sans', sans-serif;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+.foto:hover .overlay {
+	height: 100%;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
+.contenedor-modal.active {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.contenedor-modal.active img {
+	z-index: 3;
+	width: 700px;
+	height: 700px;
+}
+
+.contenedor-modal.active::after {
+	position: fixed;
+	content: '';
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(114, 201, 126, 0.459);
+}
+
+/* menu fondo parrafo*/
+.otro {
+    background-color: rgba(8, 5, 0, 0.247);
+    background-position: left;
+    background-size: cover;
+}
+/* menu*/
+nav.navbar{
+    font-family: 'Fredoka One', cursive;
+  
+  
+}
+.nav-item:hover{
+    font-size: 18px;
+}
+  /* video*/ 
+ 
+  .columnas {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  }
+  
+/*alumna*/
+.encabezadoalumna{
+    background-image: src(./img/alumna.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+  .datos .col-datos {
+    text-align: center;
+    background: #93af96;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 3px;
+  }
+  .imagenfondo {
+    background-image: url("../img/alumna.jpg");
+    background-size:cover;
+}
+    /* Juego */
+#botonjuego{
+	font-size: 40px;
+    text-align: center;	
+}
+#botonIniciar{
+	font-size: 25px;
+	color:#0f4b0f;
+    background-color:#38dd90;
+	padding: 1em;
+}
+#juego{
+	color:#00FF00;
+    text-align: center;
+    }
+#pregunta{ 
+	font-size: 25px;
+    color:#00FF00;
+
+ }
+#preguntas{ 
+	font-size:20px;
+    color:#00FF00;
+ }
+#respuesta{ 
+	font-size:20px;
+	color:#0e1a0f;
+ }
+/* Fin Juego*/	
+  
+Footer*/
+.footer-content-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: 'Fredoka One', cursive;
+}
+
+footer .website-logo{
+    margin-bottom: 1.2rem;
+    font-size: calc(1vw + 12px);
+}
+.footer-info, .menu-item-footer{
+    margin: 0.2rem 0;
+    opacity: 0.7;
+    color: rgb(50, 100, 43);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.menu-item-footer:hover{
+    opacity: 1;
+}
+
+.pie-pagina{
+    width: 100%;
+    background-color: #89a703;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 10px;
+}
+
+.pie-pagina .grupo-1 .box h2{
+      
+    color: rgb(101, 190, 72);
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #2a470e;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-2{
+    background-color: #144629;
+    font-family: 'Fredoka One', cursive;
+    padding: 15px 10px;
+    text-align: center;
+    color: rgb(101, 124, 108);
+}
+.social-links{
+    display: inline-block;
+    content: "";
+    vertical-align: -.125em;
+    background-repeat: no-repeat;
+    background-size: 5rem 5rem;
+}
+.bi{
+    color: rgb(181, 214, 194);
+}
+
+.containerImagenes
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card-effect{
+    display: flex;
+    width: auto;
+}

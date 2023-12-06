@@ -1,0 +1,70 @@
+
+
+/* formulario*/
+:root {
+ 
+    --primary: hsl(106, 10%, 55%);
+    background: #097c2565;
+    font-family: 'Architects Daughter', cursive; 
+  }      
+
+  .btn.full {
+    width: 100%;
+  }
+  
+  .btn.primary {
+    background: var(--primary);
+  }
+      
+  .form {
+    max-inline-size: 550px;
+    margin: auto;
+    color:rgb(13, 14, 13);
+    background-color: rgba(19, 73, 24, 0.13);
+  }
+  
+  .form label {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: .5em;
+    padding-inline-start: .5em;
+    
+  }
+  
+  .form label span {
+    color: #479b59;
+  }
+  
+  .form input, .form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
+    padding: .8em;
+    border-radius: .5em;
+    border: 1px solid #095f17;
+    background-color: rgba(157, 231, 169, 0.562);
+  }
+  .form textarea {
+    margin-block-end: 2em;
+    font-family: inherit;
+    background-color:rgba(129, 187, 127, 0.562);
+  }
+  
+  input::-webkit-input-placeholder {
+    color: #2b2c0388;
+  }
+  
+  .contact {
+    margin-block-end: 5em;
+  } 
+  
+  #envio {
+    opacity: 0;
+  }
+  .social-links{
+    display: inline-block;
+    content: "";
+    vertical-align: -.125em;
+    background-repeat: no-repeat;
+    background-size: 5rem 5rem;
+}
