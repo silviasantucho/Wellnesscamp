@@ -26,22 +26,7 @@ body {
 	text-align: center;
 	}
 	
-	a:hover {
-	color: #FFF;
-	}		
-	a:link{
-        		color: #ff0000;
-        	}	
-	a:visited{
-        		color: #6600FF;
-        	}
-	a:active{
-        		color: #ffa500;
-        	}
-	::selection{
-				color: slateblue;
-				background: #ffa500;
-        	}				
+	
 		header {
 			color: #02410b;
 			text-align: center;
@@ -61,22 +46,9 @@ body {
     		padding: 1em;
 	
 		}
-			
-#contenedor {
-			color:#ff0000;
-			background:#efe9f752;
-			margin: 0 auto;
-		}	
-.columnas {
-			color:#00FF00;
-			background:#6600FF;
-			text-align: left;
-			display: flex;
-			padding:8px;
-			border: 0;
-		}
+
 		
-/* Juego 1  */
+/* Juego  */
 #botonjuego{
 	font-size: 40px;
     text-align: center;	

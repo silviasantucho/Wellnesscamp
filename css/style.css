@@ -61,10 +61,3 @@
   #envio {
     opacity: 0;
   }
-  .social-links{
-    display: inline-block;
-    content: "";
-    vertical-align: -.125em;
-    background-repeat: no-repeat;
-    background-size: 5rem 5rem;
-}

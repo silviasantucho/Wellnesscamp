@@ -1,0 +1,78 @@
+body {
+	background-image: url(../img/arriba.jpg);
+    background-position: top;
+    background-size: 100% ;
+    background-repeat: no-repeat;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	text-align: center;
+		}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+	opacity: 40; /* Firefox */
+		  }
+		  
+	ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	}
+	li {
+	display: inline-block;
+	line-height: 30px;	
+	}
+	
+		section {
+			color: #000000;
+			background:#45dc1433;
+			padding: 1em;			
+		}
+		article {
+			color: #033011;
+			background:#45dc1433;	
+    		padding: 1em;
+	
+		}
+
+/* Juego */
+#botonjuego{
+	font-size: 40px;
+    text-align: center;	
+}
+#botonIniciar{
+	font-size: 25px;
+	color:#00FF00;
+    background-color:#1f370e;
+	padding: 1em;
+}
+#juego{
+	color:#00FF00;
+    text-align: center;
+    }
+#pregunta{ 
+	font-size: 20px;
+	background: #4f684b85;
+    color:#3ed33e;
+ }
+#preguntas{ 
+	display:none;
+	font-size:20px;
+	background: #206b1385;
+    color:#00FF00;
+	padding:8px;
+	border: 0;
+ }
+#respuesta{ 
+	font-size:20px;
+	color:#22442f;
+ }
+.colorform {
+margin-top: 2%;
+background-color: #70b86385;
+color:#021a02;
+}
+
+#imagenJuego{
+	display:none;
+}
+/* Fin Juego */
