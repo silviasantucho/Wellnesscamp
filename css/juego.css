@@ -9,7 +9,7 @@ body {
 		}
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
-	opacity: 40; /* Firefox */
+	opacity: 10; /* Firefox */
 		  }
 		  
 	ul {
